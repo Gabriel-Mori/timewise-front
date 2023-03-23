@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Base from "../../components/Base";
 import { useRouter } from "next/router";
 import { RiArrowGoBackLine } from "react-icons/ri";
-import CollaboratorForm from "../../components/Collaborator/form-collaborator";
+import CollaboratorForm from "../../components/Employee/form-employee";
 
 const Form: NextPage = () => {
   const router = useRouter();

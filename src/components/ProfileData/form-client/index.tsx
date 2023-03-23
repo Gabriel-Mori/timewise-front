@@ -20,7 +20,6 @@ const ClientForm: React.FC<Props> = ({ initialData }: any) => {
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
 
-  console.log('cus', customer)
   const handleSubmitChange = async () => {
     setIsLoading(true)
 

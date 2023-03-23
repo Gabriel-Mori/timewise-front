@@ -3,7 +3,7 @@ import Base from "../../../components/Base";
 import { useRouter } from "next/router";
 import { RiArrowGoBackLine } from "react-icons/ri";
 import http from "../../../http";
-import CollaboratorForm from "../../../components/Collaborator/form-collaborator";
+import CollaboratorForm from "../../../components/Employee/form-employee";
 
 const Edit: NextPage = ({ collaborator }: any) => {
   const router = useRouter();
@@ -39,13 +39,13 @@ const Edit: NextPage = ({ collaborator }: any) => {
 export default Edit;
 
 export const getServerSideProps = async (context: any) => {
-  const collaborator = await http
+  const collaborators = await http
     .get(`/employee/${context.params.id}`)
     .then((resp) => resp.data);
 
   return {
     props: {
-      collaborator: collaborator,
+      collaborator: collaborators,
     },
   };
 };

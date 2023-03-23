@@ -4,7 +4,7 @@ import Base from "../../components/Base";
 import { useRouter } from "next/router";
 import { HiPlus } from "react-icons/hi2";
 import http from "../../http";
-import CollaboratorList from "../../components/Collaborator/list-collaborator";
+import CollaboratorList from "../../components/Employee/list-employee";
 
 const ListPage: NextPage = () => {
   const [clientFiltered, setClientFiltered] = useState([]);

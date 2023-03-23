@@ -5,11 +5,9 @@ import IconButton from '@mui/material/IconButton';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { Tooltip } from "@mui/material";
@@ -20,18 +18,18 @@ import { BiTimer } from "react-icons/bi";
 
 interface Props {
   row?: any
-  setDeletedItem?: any
+  setSelectedItem?: any
   setMessageError: (value: string) => void
 }
 
 
 
-const Row: React.FC<Props> = ({ row, setMessageError, setDeletedItem }) => {
+const Row: React.FC<Props> = ({ row, setMessageError, setSelectedItem }) => {
   const router = useRouter();
   const [open, setOpen] = React.useState(false);
 
   const edit = (id: any) => {
-    router.push(`/clients/edit/${id}`);
+    router.push(`/collaborator/edit/${id}`);
   };
 
   return (
@@ -97,7 +95,7 @@ const Row: React.FC<Props> = ({ row, setMessageError, setDeletedItem }) => {
                 className="cursor-pointer ml-4 hover:text-red-500 duration-200"
                 onClick={() => {
                   setMessageError("");
-                  setDeletedItem(row)
+                  setSelectedItem(row)
                 }}
               >
                 <FiTrash size={22} />
